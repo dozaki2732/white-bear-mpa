@@ -1,42 +1,32 @@
 import React from "react";
+import thumbsUpIcon from "../../icons/thumbs-up.svg";
+import appLogo from "../../icons/logo-app.svg";
 
 export default function ReviewAnswer() {
    return (
       <div className="container">
          <div className="row">
             <div className="col-12 col-xl-6 offset-lx-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-               <img src="icons/logo-app.svg" width="32px" alt="" />
-               <h3 className="d-inline text-brand">White Bear</h3>
-               <a
-                  href="index.html"
-                  className="btn btn-link float-right"
-                  role="button"
-               >
-                  Log out
-               </a>
+               <img src={appLogo} width="32px" alt="" />
+               <h3 className="d-inline text-brand text-dark">White Bear</h3>
+               <button className="btn btn-link float-right">Log out</button>
 
                <div
-                  className="btn-group d-flex mb-5"
+                  className="btn-group d-flex mt-1 mb-5"
                   role="navigation"
                   aria-label="navigation"
                >
-                  <a
-                     href="create-answer.html"
-                     role="button"
-                     className="btn btn-secondary"
-                  >
+                  <a href="create-answer.html" className="btn btn-secondary">
                      Create new
                   </a>
                   <a
                      href="review-imagery.html"
-                     role="button"
                      className="btn btn-secondary tab-separator tab-active"
                   >
                      Review
                   </a>
                   <a
                      href="all-cards.html"
-                     role="button"
                      className="btn btn-secondary tab-separator"
                   >
                      All cards
@@ -83,10 +73,10 @@ export default function ReviewAnswer() {
                      className="btn btn-primary"
                   >
                      <img
-                        src="/icons/thumbs-up.svg"
+                        src={thumbsUpIcon}
                         width="20px"
-                        style={{ marginBottom: "5px", marginRight: "4px" }}
-                        className="mr-2"
+                        style={{ marginBottom: "5px", marginRight: "8px" }}
+                        // className="mr-2"
                         alt=""
                      />
                      Got it
