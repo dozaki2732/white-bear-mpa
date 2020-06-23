@@ -1,6 +1,15 @@
 import React from "react";
 import "./style/master.scss"; // applies global scss styles
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; //importing then using "as" to name it
+import Landing from "./components/pages/Landing";
+import AllCards from "./components/pages/AllCards";
+import CreateAnswer from "./components/pages/CreateAnswer";
+import CreateImagery from "./components/pages/CreateImagery";
+import ReviewImagery from "./components/pages/ReviewImagery";
+import ReviewAnswer from "./components/pages/ReviewAnswer";
+import ReviewEmpty from "./components/pages/ReviewEmpty";
+import Edit from "./components/pages/Edit";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
    return (
