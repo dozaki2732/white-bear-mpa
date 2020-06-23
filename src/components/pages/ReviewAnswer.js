@@ -1,15 +1,13 @@
 import React from "react";
 import thumbsUpIcon from "../../icons/thumbs-up.svg";
-import appLogo from "../../icons/logo-app.svg";
+import Header from "../ui/Header";
 
 export default function ReviewAnswer() {
    return (
       <div className="container">
          <div className="row">
             <div className="col-12 col-xl-6 offset-lx-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-               <img src={appLogo} width="32px" alt="" />
-               <h3 className="d-inline text-brand text-dark">White Bear</h3>
-               <button className="btn btn-link float-right">Log out</button>
+               <Header />
 
                <div
                   className="btn-group d-flex mt-1 mb-5"
