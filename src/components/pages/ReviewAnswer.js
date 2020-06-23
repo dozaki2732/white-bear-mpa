@@ -1,6 +1,7 @@
 import React from "react";
 import thumbsUpIcon from "../../icons/thumbs-up.svg";
 import Header from "../ui/Header";
+import Navigation from "../ui/Navigation";
 
 export default function ReviewAnswer() {
    return (
@@ -8,29 +9,8 @@ export default function ReviewAnswer() {
          <div className="row">
             <div className="col-12 col-xl-6 offset-lx-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                <Header />
-
-               <div
-                  className="btn-group d-flex mt-1 mb-5"
-                  role="navigation"
-                  aria-label="navigation"
-               >
-                  <a href="create-answer.html" className="btn btn-secondary">
-                     Create new
-                  </a>
-                  <a
-                     href="review-imagery.html"
-                     className="btn btn-secondary tab-separator tab-active"
-                  >
-                     Review
-                  </a>
-                  <a
-                     href="all-cards.html"
-                     className="btn btn-secondary tab-separator"
-                  >
-                     All cards
-                  </a>
-               </div>
-
+               <Navigation />
+               <div className="mb-5"></div>
                <div className="mb-5">
                   <div className="card bg-primary">
                      <div className="card-body">

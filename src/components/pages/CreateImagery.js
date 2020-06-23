@@ -1,6 +1,7 @@
 import React from "react";
 import saveIcon from "../../icons/save.svg";
 import Header from "../ui/Header";
+import Navigation from "../ui/Navigation";
 
 export default function CreateImagery() {
    return (
@@ -8,33 +9,7 @@ export default function CreateImagery() {
          <div className="row">
             <div className="col-12 col-xl-6 offset-lx-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                <Header />
-               <div
-                  className="btn-group mb-3 d-flex "
-                  role="navigation"
-                  aria-label="navigation"
-               >
-                  <a
-                     href="create-answer.html"
-                     role="button"
-                     className="btn btn-secondary tab-active"
-                  >
-                     Create new
-                  </a>
-                  <a
-                     href="review-imagery.html"
-                     role="button"
-                     className="btn btn-secondary tab-separator"
-                  >
-                     Review
-                  </a>
-                  <a
-                     href="all-cards.html"
-                     role="button"
-                     className="btn btn-secondary tab-separator"
-                  >
-                     All cards
-                  </a>
-               </div>
+               <Navigation />
                <h4 className="text-center text-muted mt-3 mb-3">
                   Add memorable imagery
                </h4>
