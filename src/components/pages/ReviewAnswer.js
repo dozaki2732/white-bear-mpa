@@ -3,6 +3,7 @@ import thumbsUpIcon from "../../icons/thumbs-up.svg";
 import Header from "../ui/Header";
 import Navigation from "../ui/Navigation";
 import AppTemplate from "../ui/AppTemplate";
+import { Link } from "react-router-dom";
 
 export default function ReviewAnswer() {
    return (
@@ -35,27 +36,22 @@ export default function ReviewAnswer() {
             Edit card
          </a>
          <div className="float-right">
-            <a
+            <Link
                role="button"
-               href="review-empty.html"
+               to="/review-empty"
                className="btn btn-outline-primary mr-4"
             >
                Needs work
-            </a>
-            <a
-               role="button"
-               href="review-empty.html"
-               className="btn btn-primary"
-            >
+            </Link>
+            <Link role="button" to="/review-empty" className="btn btn-primary">
                <img
                   src={thumbsUpIcon}
                   width="20px"
                   style={{ marginBottom: "5px", marginRight: "8px" }}
-                  // className="mr-2"
                   alt=""
                />
                Got it
-            </a>
+            </Link>
          </div>
       </AppTemplate>
    );
