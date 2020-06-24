@@ -1,5 +1,13 @@
 import React from "react";
+import Header from "../ui/Header";
+import Navigation from "../ui/Navigation";
+import AppTemplate from "../ui/AppTemplate";
 
 export default function ReviewImagery() {
-   return <h1>ReviewImagery</h1>;
+   return (
+      <AppTemplate>
+         <Header />
+         <Navigation />
+      </AppTemplate>
+   );
 }

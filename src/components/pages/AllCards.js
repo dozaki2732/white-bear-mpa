@@ -1,5 +1,13 @@
 import React from "react";
+import Header from "../ui/Header";
+import Navigation from "../ui/Navigation";
+import AppTemplate from "../ui/AppTemplate";
 
 export default function AllCards() {
-   return <h1>AllCards</h1>;
+   return (
+      <AppTemplate>
+         <Header />
+         <Navigation />
+      </AppTemplate>
+   );
 }
