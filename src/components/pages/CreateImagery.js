@@ -47,7 +47,12 @@ export default function CreateImagery() {
          </Link>
 
          <div className="float-right mb-5">
-            <button className="btn btn-primary btn-lg" id="save-imagery">
+            <Link
+               to="/review-imagery"
+               role="button"
+               className="btn btn-primary btn-lg"
+               id="save-imagery"
+            >
                <img
                   alt=""
                   src={saveIcon}
@@ -55,7 +60,7 @@ export default function CreateImagery() {
                   style={{ marginBottom: "3px", marginRight: "4px" }}
                />
                Save
-            </button>
+            </Link>
          </div>
       </AppTemplate>
    );
