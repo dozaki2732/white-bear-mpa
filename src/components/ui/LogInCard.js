@@ -32,13 +32,13 @@ export default function LogInCard() {
                         id="password"
                      />
                   </div>
-                  <a
-                     href="create-answer.html"
+                  <Link
+                     to="/create-answer"
                      role="button"
                      className="btn btn-success btn-lg btn-landing float-right"
                   >
                      Log in
-                  </a>
+                  </Link>
                </div>
             </div>
          </div>
