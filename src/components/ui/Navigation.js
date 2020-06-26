@@ -9,8 +9,8 @@ export default function Navigation() {
          url.indexOf("create-imagery") > 0 ||
          url.indexOf("create-answer") > 0
       ) {
-         return "tab-active";
-      } else return "";
+         return "tab-active"; // adding the class
+      } else return ""; // adding an empty string so essentially adding nothing keeping it the same
    };
    const tabActiveOnReview = (url) => {
       if (
