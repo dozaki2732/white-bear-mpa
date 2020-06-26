@@ -1,8 +1,9 @@
 .landing-pg-bg {
-   background-image: url(/src/images/background-landing.jpg);
+   background-image: url("../images/background-landing.jpg"); //relative path needs to be
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
+   min-height: 100vh;
 }
 .logo-font {
    color: $white;

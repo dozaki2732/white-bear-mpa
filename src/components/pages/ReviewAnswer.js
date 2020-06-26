@@ -32,9 +32,9 @@ export default function ReviewAnswer() {
                </div>
             </div>
          </div>
-         <a href="edit.html" role="button" className="btn btn-link">
+         <Link to="/edit" role="button" className="btn btn-link">
             Edit card
-         </a>
+         </Link>
          <div className="float-right">
             <Link
                role="button"
@@ -43,7 +43,11 @@ export default function ReviewAnswer() {
             >
                Needs work
             </Link>
-            <Link role="button" to="/review-empty" className="btn btn-primary">
+            <Link
+               role="button"
+               to="/review-imagery"
+               className="btn btn-primary"
+            >
                <img
                   src={thumbsUpIcon}
                   width="20px"

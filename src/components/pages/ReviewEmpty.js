@@ -16,7 +16,7 @@ export default function ReviewEmpty() {
          <div className="float-right">
             <Link
                role="button"
-               to="/create-answer"
+               to="/review-imagery"
                className="btn btn-outline-primary mr-4 btn-lg"
             >
                Get more cards

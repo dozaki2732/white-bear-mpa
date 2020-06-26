@@ -48,7 +48,7 @@ export default function CreateImagery() {
 
          <div className="float-right mb-5">
             <Link
-               to="/review-imagery"
+               to="/create-answer"
                role="button"
                className="btn btn-primary btn-lg"
                id="save-imagery"
