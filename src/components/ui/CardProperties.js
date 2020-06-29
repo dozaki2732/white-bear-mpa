@@ -13,7 +13,7 @@ export default function CardProperties() {
                   <p className="text-muted">Created on:</p>
                </div>
                <div className="col-8">
-                  <p>Dec. 24, 2019</p>
+                  <p> {} </p>
                </div>
             </div>
             <div className="row mb-2">

@@ -37,10 +37,11 @@ const memoryCards = [
       imagery: "lefty loosey, righty tighty",
       answer: "turn left to loosen things and righ to tighten",
       userID: "1f75eb6d-ee48-48bf-90b2-790a0a48c6ba",
-      createdAt: 1593194829,
+      createdAt: 1593447403642,
       nextAttemptAt: 1593194871,
       lastAttemptAt: 1593194901,
       totalSuccessfulAttempts: 0,
       level: 1,
    },
 ];
+export default memoryCards;

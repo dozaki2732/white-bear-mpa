@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../ui/Header";
 import Navigation from "../ui/Navigation";
 import AppTemplate from "../ui/AppTemplate";
-import { Link } from "react-router-dom";
-import editIcon from "../../icons/edit.svg";
+import MemoryCard from "../ui/MemoryCard";
+import memoryCards from "../../mock-data/memory-cards";
 
 export default function AllCards() {
    return (
@@ -38,62 +38,16 @@ export default function AllCards() {
                </select>
             </div>
          </form>
-         <div className="row mb-4">
-            <div className="col-9">
-               <div className="card bg-primary">
-                  <div className="card-body">
-                     One morning, when Gregor Samsa woke from troubled dreams,
-                     he found himself transformed in his bed into a horrible
-                     vermin. He lay on his armour-like back, and if he lifted
-                     his head a little he could see his brown belly, slightly
-                     domed.
-                  </div>
-               </div>
-               <div className="card bg-secondary">
-                  <div className="card-body">
-                     One morning, when Gregor Samsa woke from troubled dreams,
-                     he found himself transformed in his bed into a horrible
-                     vermin. He lay on his armour-like back, and if he lifted
-                     his head a little he could see his brown belly, slightly
-                     domed.
-                  </div>
-               </div>
-            </div>
-            <div className="col-3 justify-content-left">
-               <Link to="/edit" className="btn btn-link float-right">
-                  <img alt="" src={editIcon} width="20px" />
-                  Edit
-               </Link>
-            </div>
-         </div>
-         <div className="row mb-4">
-            <div className="col-9">
-               <div className="card bg-primary">
-                  <div className="card-body">
-                     One morning, when Gregor Samsa woke from troubled dreams,
-                     he found himself transformed in his bed into a horrible
-                     vermin. He lay on his armour-like back, and if he lifted
-                     his head a little he could see his brown belly, slightly
-                     domed.
-                  </div>
-               </div>
-               <div className="card bg-secondary">
-                  <div className="card-body">
-                     One morning, when Gregor Samsa woke from troubled dreams,
-                     he found himself transformed in his bed into a horrible
-                     vermin. He lay on his armour-like back, and if he lifted
-                     his head a little he could see his brown belly, slightly
-                     domed.
-                  </div>
-               </div>
-            </div>
-            <div className="col-3 justify-content-left">
-               <Link to="/edit" className="btn btn-link float-right">
-                  <img alt="" src={editIcon} width="20px" />
-                  Edit
-               </Link>
-            </div>
-         </div>
+
+         {memoryCards.map((memoryCard) => {
+            return (
+               <MemoryCard
+                  answer={memoryCard.answer}
+                  imagery={memoryCard.imagery}
+                  key={memoryCard.id}
+               />
+            );
+         })}
       </AppTemplate>
    );
 }
