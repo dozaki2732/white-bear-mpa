@@ -86,7 +86,9 @@ export default function Edit() {
                   <p className="text-muted">Last attempt:</p>
                </div>
                <div className="col-8">
-                  <p>{memoryCard.lastAttemptAt}</p>
+                  <p>
+                     {toDisplayDate(memoryCard.lastAttemptAt, "MMM. d, yyy")}
+                  </p>
                </div>
             </div>
             <div className="row mb-2">
@@ -94,7 +96,9 @@ export default function Edit() {
                   <p className="text-muted">Next attempt:</p>
                </div>
                <div className="col-8">
-                  <p>{memoryCard.nextAttemptAt}</p>
+                  <p>
+                     {toDisplayDate(memoryCard.nextAttemptAt, "MMM. d, yyy")}
+                  </p>
                </div>
             </div>
             <div className="row mb-4">
