@@ -4,6 +4,7 @@ import Navigation from "../ui/Navigation";
 import AppTemplate from "../ui/AppTemplate";
 import { Link } from "react-router-dom";
 import { checkIsOver, MAX_CARD_CHARS } from "../../utils/helpers";
+import classnames from "classnames";
 
 export default class CreateAnswer extends React.Component {
    constructor(props) {
@@ -34,15 +35,35 @@ export default class CreateAnswer extends React.Component {
             <h4 className="text-center text-muted mb-3"> Add an Answer</h4>
             <div className="card">
                <div className="mb-5 bg-primary card-body">
-                  <textarea autoFocus={true} rows="11"></textarea>
+                  <textarea
+                     className=" d-md-block"
+                     rows="11"
+                     onChange={(e) => this.setAnswerText(e)}
+                     autoFocus={true}
+                  ></textarea>
                </div>
             </div>
-            <div className="float-right mb-5">0 / {MAX_CARD_CHARS}</div>
-            <div className="clearfix"></div>
 
+            <p className="float-right mb-5">
+               <span
+                  className={classnames({
+                     "text-danger": checkIsOver(
+                        this.state.answerText,
+                        MAX_CARD_CHARS
+                     ),
+                  })}
+               >
+                  {this.state.answerText.length} / {MAX_CARD_CHARS}
+               </span>
+            </p>
+            <div className="clearfix"></div>
+            <div className="clear-fix"></div>
             <Link
                to="/create-imagery"
-               className="btn btn-outline-primary btn-lg float-right"
+               className={classnames(
+                  "btn btn-outline-primary btn-lg float-right",
+                  { disabled: this.checkHasInvalidCharCount() }
+               )}
             >
                Next
             </Link>
