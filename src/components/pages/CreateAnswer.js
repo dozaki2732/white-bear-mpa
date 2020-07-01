@@ -36,7 +36,6 @@ export default class CreateAnswer extends React.Component {
             <div className="card">
                <div className="mb-5 bg-primary card-body">
                   <textarea
-                     className=" d-md-block"
                      rows="11"
                      onChange={(e) => this.setAnswerText(e)}
                      autoFocus={true}
