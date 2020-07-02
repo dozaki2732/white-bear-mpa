@@ -102,7 +102,7 @@ export default class Edit extends React.Component {
             <Link
                to="/all-cards"
                role="button"
-               className={classnames("btn btn-primary btn-lg float-right", {
+               className={classnames("btn btn-primary btn-lg ", {
                   disabled: this.checkHasInvalidCharCount(),
                })}
                id="save-imagery"
