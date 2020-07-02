@@ -98,24 +98,24 @@ export default class Edit extends React.Component {
             <Link to="/all-cards" className="btn btn-link">
                Discard changes
             </Link>
-
-            <Link
-               to="/all-cards"
-               role="button"
-               className={classnames("btn btn-primary btn-lg ", {
-                  disabled: this.checkHasInvalidCharCount(),
-               })}
-               id="save-imagery"
-            >
-               <img
-                  alt=""
-                  src={saveIcon}
-                  width="20px"
-                  style={{ marginBottom: "3px", marginRight: "4px" }}
-               />
-               Save
-            </Link>
-
+            <div className="float-right">
+               <Link
+                  to="/all-cards"
+                  role="button"
+                  className={classnames("btn btn-primary btn-lg ", {
+                     disabled: this.checkHasInvalidCharCount(),
+                  })}
+                  id="save-imagery"
+               >
+                  <img
+                     alt=""
+                     src={saveIcon}
+                     width="20px"
+                     style={{ marginBottom: "3px", marginRight: "4px" }}
+                  />
+                  Save
+               </Link>
+            </div>
             <div>
                <div className="text-center text-muted my-6">
                   <h4>Card properties</h4>
