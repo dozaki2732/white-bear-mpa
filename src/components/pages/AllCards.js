@@ -15,16 +15,17 @@ export default class AllCards extends React.Component {
       };
    }
 
-   setMemoryCardsOrder(e) {
-      console.log("you made a change");
+   filterByInput(e) {}
+
+   setOrder(e) {
       const newOrder = e.target.value;
       console.log(newOrder); //"['totalSuccessfulAttempts',' createdAt'], ['desc', 'desc']"
-      const copyOfMemoryCards = [...this.state.memoryCards]; //copy of all the memory cards, cannot alter state only a copy of state
-      const toJson = JSON.parse(newOrder); //spread operator only works on function arguments
-      console.log(...toJson);
-      const orderedMemoryCards = orderBy(copyOfMemoryCards, ...toJson); //converting string to object
-      this.setState({ order: newOrder, memoryCards: orderedMemoryCards });
+      this.setState({ order: newOrder }, this.setMemoryCards());
    }
+
+   setMemoryCards() {}
+
+   setMemoryCardsOrder(e) {}
 
    render() {
       return (
