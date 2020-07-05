@@ -8,11 +8,10 @@ import orderBy from "lodash/orderBy";
 
 export default class AllCards extends React.Component {
    constructor(props) {
-      const defaultOrder = '[["createdAt"], ["desc"]]';
       super(props);
       this.state = {
-         order: defaultOrder,
-         memoryCards: orderBy(memoryCards, defaultOrder),
+         order: '[["createdAt"], ["desc"]]',
+         memoryCards: orderBy(memoryCards, ["createdAt"], ["desc"]),
       };
    }
 
