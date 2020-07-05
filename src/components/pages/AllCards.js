@@ -8,10 +8,11 @@ import orderBy from "lodash/orderBy";
 
 export default class AllCards extends React.Component {
    constructor(props) {
+      const defaultOrder = '[["createdAt"], ["desc"]]';
       super(props);
       this.state = {
-         order: '[["createdAt"], ["desc", "asc]"]]',
-         memoryCards: orderBy(memoryCards, ["createdAt"], ["desc"]),
+         order: defaultOrder,
+         memoryCards: orderBy(memoryCards, defaultOrder),
       };
    }
 
@@ -20,12 +21,26 @@ export default class AllCards extends React.Component {
    setOrder(e) {
       const newOrder = e.target.value;
       console.log(newOrder); //"['totalSuccessfulAttempts',' createdAt'], ['desc', 'desc']"
-      this.setState({ order: newOrder }, this.setMemoryCards());
+      this.setState({ order: newOrder }, () => this.setMemoryCards());
    }
 
-   setMemoryCards() {}
+   setMemoryCards() {
+      console.log("set memory cards");
+      const copyOfMemoryCards = [...this.state.memoryCards]; //copy of all the memory cards, cannot alter state only a copy of state
+      const toJson = JSON.parse(this.state.order); //spread operator only works on function arguments
+      console.log(...toJson);
+      const orderedMemoryCards = orderBy(copyOfMemoryCards, ...toJson); //converting string to object
+      this.setState({ memoryCards: orderedMemoryCards });
+   }
 
-   setMemoryCardsOrder(e) {}
+   setMemoryCardsOrder(e) {
+      const newOrder = e.target.value;
+      console.log(newOrder); //"['totalSuccessfulAttempts',' createdAt'], ['desc', 'desc']"
+      const copyOfMemoryCards = [...this.state.memoryCards]; //copy of all the memory cards, cannot alter state only a copy of state
+      const toJson = JSON.parse(newOrder); //spread operator only works on function arguments
+      const orderedMemoryCards = orderBy(copyOfMemoryCards, ...toJson); //converting string to object
+      this.setState({ order: newOrder, memoryCards: orderedMemoryCards });
+   }
 
    render() {
       return (
@@ -55,7 +70,7 @@ export default class AllCards extends React.Component {
                   <select
                      value={this.state.order}
                      className="form-control form-control-sm"
-                     onChange={(e) => this.setMemoryCardsOrder(e)}
+                     onChange={(e) => this.setOrder(e)}
                   >
                      <option value='[["createdAt"], ["desc"]]'>
                         Most Recent
