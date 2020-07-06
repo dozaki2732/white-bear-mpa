@@ -11,7 +11,6 @@ export default class SignUpCard extends React.Component {
          isDisplayingInputs: false,
          emailError: "",
          passwordError: "",
-         passwordError: false,
          hasEmailError: false,
       };
    }
