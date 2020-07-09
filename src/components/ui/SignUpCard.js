@@ -2,8 +2,10 @@ import React from "react";
 import classnames from "classnames";
 import hash from "object-hash";
 import { v4 as getUuid } from "uuid";
+import { EMAIL_REGEX } from "../../utils/helpers";
+import { withRouter } from "react-router-dom";
 
-export default class SignUpCard extends React.Component {
+class SignUpCard extends React.Component {
    constructor(props) {
       super(props);
       console.log("new");
@@ -23,8 +25,6 @@ export default class SignUpCard extends React.Component {
 
    async setEmailState(emailInput) {
       const loweredCasedEmailInput = emailInput.toLowerCase();
-      //eslint-disable-next-line
-      const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
       if (emailInput === "")
          this.setState({
@@ -32,7 +32,7 @@ export default class SignUpCard extends React.Component {
             hasEmailError: true,
          });
       //changing state from empty string to error message
-      else if (emailRegex.test(loweredCasedEmailInput) === false) {
+      else if (EMAIL_REGEX.test(loweredCasedEmailInput) === false) {
          this.setState({
             emailError: "Please enter a valid email address",
             hasEmailError: true,
@@ -99,6 +99,7 @@ export default class SignUpCard extends React.Component {
             createdAt: Date.now(),
          };
          console.log(user);
+         this.props.history.push("/create-answer");
       }
    }
    //click "lets go" going to run the function validateAndCreateUser, validateAndCreateUser
@@ -194,3 +195,5 @@ export default class SignUpCard extends React.Component {
       );
    }
 }
+
+export default withRouter(SignUpCard);

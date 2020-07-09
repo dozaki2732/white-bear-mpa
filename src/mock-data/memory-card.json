@@ -1,0 +1,46 @@
+[
+   {
+      "id": "38e0e7eb-6b98-4f6f-b24d-8a10d36c44b0",
+      "imagery": "are these the reebok or the nike",
+      "answer": "this is the rhythm of the night ",
+      "userID": "1f75eb6d-ee48-48bf-90b2-790a0a48c6ba",
+      "createdAt": 1593194784,
+      "nextAttemptAt": 1593194842,
+      "lastAttemptAt": 1593194878,
+      "totalSuccessfulAttempts": 5,
+      "level": 1
+   },
+   {
+      "id": "0a4b475c-bb63-4094-943a-afe39f8a0164",
+      "imagery": "the salad is against the pasta and wants to be first",
+      "answer": "Antipasto is appetizers",
+      "userID": "1f75eb6d-ee48-48bf-90b2-790a0a48c6ba",
+      "createdAt": 1593194795,
+      "nextAttemptAt": 1593194853,
+      "lastAttemptAt": 1593194886,
+      "totalSuccessfulAttempts": 2,
+      "level": 1
+   },
+   {
+      "id": "9a45da71-f000-45fb-ae4a-94477d414a51",
+      "imagery": "lean into the wheaty",
+      "answer": "linguine is the flat spaghetti",
+      "userID": "1f75eb6d-ee48-48bf-90b2-790a0a48c6ba",
+      "createdAt": 1593194820,
+      "nextAttemptAt": 1593194863,
+      "lastAttemptAt": 1593194895,
+      "totalSuccessfulAttempts": 1,
+      "level": 1
+   },
+   {
+      "id": "583a3aa2-2f0d-42b1-9dd8-ca0002a79e47",
+      "imagery": "lefty loosey, righty tighty",
+      "answer": "turn left to loosen things and righ to tighten",
+      "userID": "1f75eb6d-ee48-48bf-90b2-790a0a48c6ba",
+      "createdAt": 1593447403642,
+      "nextAttemptAt": 1593194871,
+      "lastAttemptAt": 1593194901,
+      "totalSuccessfulAttempts": 0,
+      "level": 1
+   }
+]
