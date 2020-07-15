@@ -66,7 +66,7 @@ class ReviewAnswer extends React.Component {
 function mapStateToProps(state) {
    //global
    return {
-      queuedCards: state.queuedCards,
+      queuedCards: state.queue,
       indexOfCurrentCard: state.indexOfCurrentCard,
    }; //what state do you want to map
 }

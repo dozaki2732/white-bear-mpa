@@ -29,7 +29,7 @@ class ReviewImagery extends React.Component {
    }
 
    render() {
-      const memoryCard = this.props.queuedCards[this.props.indexOfCurrentCard];
+      const memoryCard = this.props.queue.cards[this.props.queue.index];
 
       return (
          <AppTemplate>
@@ -61,8 +61,7 @@ class ReviewImagery extends React.Component {
 function mapStateToProps(state) {
    //global
    return {
-      queuedCards: state.queuedCards,
-      indexOfCurrentCard: state.indexOfCurrentCard,
+      queue: state.queue,
    }; //what state do you want to map
 }
 //take the global state, and map these certain things. will return what we want to pass from the global state
