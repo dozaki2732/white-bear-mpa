@@ -10,22 +10,26 @@ import actions from "../../store/actions";
 class ReviewImagery extends React.Component {
    constructor(props) {
       super(props);
-      axios
-         .get(
-            "https://raw.githubusercontent.com/dozaki2732/white-bear-mpa/master/src/mock-data/memory-card.json"
-         )
-         .then(function (res) {
-            // handle success
-            console.log(res); //save to the store
-            props.dispatch({
-               type: actions.STORE_QUEUED_CARDS,
-               payload: res.data,
+
+      if (props.queue.cards.length === 0) {
+         console.log("empty arr of cards");
+         axios
+            .get(
+               "https://raw.githubusercontent.com/dozaki2732/white-bear-mpa/master/src/mock-data/memory-card.json"
+            )
+            .then(function (res) {
+               // handle success
+               console.log(res); //save to the store
+               props.dispatch({
+                  type: actions.STORE_QUEUED_CARDS,
+                  payload: res.data,
+               });
+            })
+            .catch(function (error) {
+               // handle error
+               console.log(error);
             });
-         })
-         .catch(function (error) {
-            // handle error
-            console.log(error);
-         });
+      }
    }
 
    render() {

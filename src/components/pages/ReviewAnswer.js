@@ -9,12 +9,19 @@ import actions from "../../store/actions";
 
 class ReviewAnswer extends React.Component {
    goToNextCard() {
-      this.props.dispatch({ type: actions.UPDATE_INDEX_OF_CURRENT_CARD });
-      this.props.history.push("/review-imagery");
+      if (this.props.queue.index === this.props.queue.cards.length - 1) {
+         this.props.dispatch({
+            type: actions.RESET_QUEUE,
+         });
+         this.props.history.push("/review-empty");
+      } else {
+         this.props.dispatch({ type: actions.INCREMENT_QUEUE_INDEX });
+         this.props.history.push("/review-imagery");
+      }
    }
 
    render() {
-      const memoryCard = this.props.queuedCards[this.props.indexOfCurrentCard];
+      const memoryCard = this.props.queue.cards[this.props.queue.index];
       return (
          <AppTemplate>
             <Header />
@@ -45,15 +52,17 @@ class ReviewAnswer extends React.Component {
                >
                   Needs work
                </button>
-               <button className="btn btn-primary">
+               <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                     this.goToNextCard();
+                  }}
+               >
                   <img
                      src={thumbsUpIcon}
                      width="20px"
                      style={{ marginBottom: "5px", marginRight: "8px" }}
                      alt=""
-                     onClick={() => {
-                        this.goToNextCard();
-                     }}
                   />
                   Got it
                </button>
@@ -66,8 +75,7 @@ class ReviewAnswer extends React.Component {
 function mapStateToProps(state) {
    //global
    return {
-      queuedCards: state.queue,
-      indexOfCurrentCard: state.indexOfCurrentCard,
+      queue: state.queue,
    }; //what state do you want to map
 }
 //take the global state, and map these certain things. will return what we want to pass from the global state
