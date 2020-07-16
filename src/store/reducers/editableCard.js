@@ -9,6 +9,6 @@ export default function editableCard(editableCard = {}, action) {
          return newEditableCard; //new state
 
       default:
-         return newEditableCard;
+         return editableCard;
    }
 }

@@ -5,7 +5,7 @@ export default function currentUser(currentUser = {}, action) {
    //action.GET_USER = "GET_USER"
    //pass me some state, if you dont , default will be used
    //switch statements
-   let newCurrentUser = { ...currentUser };
+   // let newCurrentUser = { ...currentUser };
 
    switch (action.type) {
       case actions.STORE_CURRENT_USER:
