@@ -55,7 +55,7 @@ class ReviewImagery extends React.Component {
             </div>
             {this.props.queue.index > 0 && (
                <button
-                  className="btn btn-button"
+                  className="btn btn-link"
                   onClick={() => {
                      this.goToPrevCard();
                   }}

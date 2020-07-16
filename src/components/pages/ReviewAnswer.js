@@ -10,9 +10,8 @@ import actions from "../../store/actions";
 class ReviewAnswer extends React.Component {
    goToNextCard() {
       if (this.props.queue.index === this.props.queue.cards.length - 1) {
-         this.props.dispatch({
-            type: actions.RESET_QUEUE,
-         });
+         //youre on the last card
+         this.props.dispatch({ type: actions.INCREMENT_QUEUE_INDEX });
          this.props.history.push("/review-empty");
       } else {
          this.props.dispatch({ type: actions.INCREMENT_QUEUE_INDEX });
