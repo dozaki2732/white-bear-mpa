@@ -181,3 +181,14 @@ export default class Edit extends React.Component {
       );
    }
 }
+
+/*  editableCard: {
+prevRoute: {}
+card:{ 
+   all the card properties 
+}
+
+} 
+
+
+*/
