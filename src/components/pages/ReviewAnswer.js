@@ -8,6 +8,13 @@ import { connect } from "react-redux";
 import actions from "../../store/actions";
 
 class ReviewAnswer extends React.Component {
+   constructor(props) {
+      super(props);
+      if (this.props.queue.cards.length === 0) {
+         this.props.history.push("/review-empty");
+      }
+   }
+
    goToNextCard() {
       if (this.props.queue.index === this.props.queue.cards.length - 1) {
          //youre on the last card
