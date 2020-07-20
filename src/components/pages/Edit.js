@@ -57,6 +57,11 @@ class Edit extends React.Component {
          type: actions.STORE_QUEUED_CARDS,
          payload: filteredCards,
       });
+      if (filteredCards[this.props.queue.index] === undefined) {
+         this.props.history.push("/review-empty");
+      } else {
+         this.props.history.push("/review-imagery");
+      }
    }
 
    render() {
@@ -218,15 +223,14 @@ class Edit extends React.Component {
                         </div>
                      </div>
 
-                     <Link
-                        to={this.props.editableCard.prevRoute}
+                     <button
                         className="btn btn-large btn-outline-danger  mb-3"
                         onClick={() => {
                            this.deleteCardFromStore();
                         }}
                      >
                         Delete this card
-                     </Link>
+                     </button>
                   </div>
                </>
             )}
