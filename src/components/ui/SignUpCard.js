@@ -4,6 +4,9 @@ import hash from "object-hash";
 import { v4 as getUuid } from "uuid";
 import { EMAIL_REGEX } from "../../utils/helpers";
 import { withRouter } from "react-router-dom";
+import axios from "axios";
+import { connect } from "react-redux";
+import actions from "../../store/actions";
 
 class SignUpCard extends React.Component {
    constructor(props) {
@@ -98,7 +101,24 @@ class SignUpCard extends React.Component {
             password: hash(passwordInput),
             createdAt: Date.now(),
          };
-         console.log(user);
+         console.log("created user object for POST", user);
+         //mimic api response
+         axios
+            .get(
+               "https://raw.githubusercontent.com/dozaki2732/white-bear-mpa/master/src/mock-data/user.json"
+            )
+            .then((res) => {
+               const currentUser = res.data;
+               console.log(currentUser);
+               this.props.dispatch({
+                  type: actions.UPDATE_CURRENT_USER,
+                  payload: res.data,
+               });
+            })
+            .catch((error) => {
+               // handle error
+               console.log(error);
+            });
          this.props.history.push("/create-answer");
       }
    }
@@ -195,5 +215,8 @@ class SignUpCard extends React.Component {
       );
    }
 }
+function mapStateToProps(state) {
+   return {};
+}
 
-export default withRouter(SignUpCard);
+export default withRouter(connect(mapStateToProps)(SignUpCard));

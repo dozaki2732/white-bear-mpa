@@ -1,6 +1,6 @@
 const actions = {
    //actions are global > screaming snake case
-   STORE_CURRENT_USER: "STORE_CURRENT_USER", // sending a string that will tell what to do
+   UPDATE_CURRENT_USER: "UPDATE_CURRENT_USER", // sending a string that will tell what to do
    STORE_QUEUED_CARDS: "STORE_QUEUED_CARDS",
    INCREMENT_QUEUE_INDEX: "INCREMENT_QUEUE_INDEX",
    DECREMENT_QUEUE_INDEX: "DECREMENT_QUEUE_INDEX",
